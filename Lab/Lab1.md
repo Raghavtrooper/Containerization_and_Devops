@@ -39,16 +39,16 @@ The primary goals of this experiment are:
 Using Vagrant, an Ubuntu VM was initialized and started.
 * **Command:** `vagrant init ubuntu/jammy64` followed by `vagrant up`.
 
-![Vagrant Up Process](Lab1i/Screenshot%202026-01-31%20100942.png)
+![Vagrant Up Process](../screenshots/Lab1i/Screenshot%202026-01-31%20100942.png)
 > *Observation: The system downloads the base box and configures the VirtualBox provider.*
 
 ### **Step 2: Accessing the VM and Installing Nginx**
 Once the VM was running, SSH was used to access the terminal, and Nginx was installed via the package manager.
 
-![Nginx Installation in VM](Lab1i/Screenshot%202026-01-31%20101232.png)
+![Nginx Installation in VM](../screenshots/Lab1i/Screenshot%202026-01-31%20101232.png)
 > *Observation: Running `sudo apt update` and `sudo apt install -y nginx` inside the guest OS.*
 
-![Nginx Installation Complete](Lab1i/Screenshot%202026-01-31%20101309.png)
+![Nginx Installation Complete](../screenshots/Lab1i/Screenshot%202026-01-31%20101309.png)
 > *Observation: Service configuration complete within the Ubuntu Jammy environment.*
 
 ---
@@ -59,13 +59,13 @@ Once the VM was running, SSH was used to access the terminal, and Nginx was inst
 The Docker engine was used to pull the Ubuntu image and deploy a containerized Nginx instance.
 * **Command:** `docker run -dp 8080:80 --name nginx-container nginx`.
 
-![Docker Pull and Run](Lab1i/docker_pull_ubuntu.png)
+![Docker Pull and Run](../screenshots/Lab1i/docker_pull_ubuntu.png)
 > *Observation: Docker pulls the image layers and starts the container nearly instantaneously.*
 
 ### **Step 2: Verification**
 The Nginx server was verified by accessing the mapped port on the localhost.
 
-![Nginx Container Verification](Lab1i/docker_curl_localhost.png)
+![Nginx Container Verification](../screenshots/Lab1i/docker_curl_localhost.png)
 > *Observation: The `curl` command confirms the Nginx "Welcome" page is active on port 8080.*
 
 ---
@@ -86,10 +86,10 @@ The Nginx server was verified by accessing the mapped port on the localhost.
 | **Disk Usage** | Larger | Smaller |
 | **Isolation** | Strong | Moderate |
 
-![Docker Stats](Lab1i/docker_naginx_stats.png)
+![Docker Stats](../screenshots/Lab1i/docker_naginx_stats.png)
 > *Observation: The containerized Nginx uses only ~13.22 MiB of RAM, demonstrating extreme efficiency compared to a full VM.*
 
-![System Memory](Lab1i/docker_memeory_usage.png)
+![System Memory](../screenshots/Lab1i/docker_memeory_usage.png)
 
 ---
 
