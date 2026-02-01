@@ -1,45 +1,106 @@
-# Experiment 1: Compare Virtual Machines with Containers
-
-**Name:** [Raghav Sharma]  
-**Roll No:** [R2142230283]  
-**Course:** Containerization and DevOps  
-**Date:** [31/1/2026]
+# Lab Report: Comparison of Virtual Machines (VMs) and Containers
 
 ---
 
-## 1. Objective
-To study and compare the architectural and functional differences between Virtual Machines (VMs) and Containers (e.g., Docker).
+## **1. Objective**
+The primary goals of this experiment are:
+* To understand the conceptual and practical differences between Virtual Machines (VMs) and Containers.
+* To install and configure an Ubuntu-based Nginx web server using both VirtualBox/Vagrant and Docker inside WSL.
+* To compare resource utilization, performance, and operational characteristics of both environments.
 
-## 2. Theory
+---
 
-### Virtual Machines (VM)
-A Virtual Machine is a digital version of a physical computer. It runs on a software called a **Hypervisor** (Type 1 or Type 2).
-- **Key Characteristic:** Every VM includes a full "Guest Operating System," its own binaries, and libraries. This makes them heavy but fully isolated.
+## **2. Hardware and Software Requirements**
+### **Hardware**
+* 64-bit system with virtualization support enabled in BIOS.
+* Minimum 8 GB RAM (4 GB acceptable).
+* Internet connection.
 
-### Containers
-Containers are lightweight packages of application code together with dependencies (libraries, frameworks). They do not bundle a full OS; instead, they share the **Host OS Kernel**.
-- **Key Characteristic:** Containers are process-level isolations. They start instantly and use a fraction of the memory a VM would use.
+### **Software**
+* Oracle VirtualBox and Vagrant.
+* Windows Subsystem for Linux (WSL 2) with Ubuntu distribution.
+* Docker Engine (docker.io).
 
-## 3. Comparison
+---
 
-| Feature | Virtual Machines (VM) | Containers |
+## **3. Theory**
+| Feature | Virtual Machine (VM) | Container |
 | :--- | :--- | :--- |
-| **Architecture** | Hypervisor-based; each VM has a full Guest OS. | Daemon-based; shares the Host OS kernel. |
-| **Size** | Heavyweight (Gigabytes). | Lightweight (Megabytes). |
-| **Boot Speed** | Slow (Minutes) - Requires OS boot. | Fast (Seconds) - Starts as a process. |
-| **Isolation** | Strong (Hardware-level isolation). | Moderate (Process-level isolation). |
-| **Portability** | Harder to migrate (large snapshots). | Highly portable (run anywhere Docker runs). |
-| **Resource Usage** | High dedicated resources (RAM/CPU). | Efficient; resources are released when not in use. |
-
-## 4. Diagrammatic Representation (Optional)
-*(You can describe the architecture here or insert an image link if you have one)*
-
-- **VM:** Hardware -> Hypervisor -> Guest OS -> App
-- **Container:** Hardware -> Host OS -> Container Engine -> App
-
-## 5. Conclusion
-In this experiment, we analyzed the differences between virtualization and containerization.
-- **VMs** are best suited for running multiple different OSs (e.g., Linux on Windows) and apps requiring total isolation.
-- **Containers** are superior for microservices, DevOps workflows, and scenarios requiring fast deployment and scalability.
+| **Virtualization Level** | Emulates complete hardware and kernel. | Virtualizes at the OS level, sharing the host kernel. |
+| **Isolation** | Strong (Full OS isolation). | Moderate (Process-level isolation). |
+| **Resource Usage** | Higher (Requires dedicated RAM/CPU for guest OS). | Lightweight and efficient. |
+| **Startup Time** | Slower (Minutes). | Fast (Seconds). |
 
 ---
+
+## **4. Experiment Setup - Part A: Virtual Machine**
+
+### **Step 1: Initialization and Deployment**
+Using Vagrant, an Ubuntu VM was initialized and started.
+* **Command:** `vagrant init ubuntu/jammy64` followed by `vagrant up`.
+
+![Vagrant Up Process](Lab1i/Screenshot%202026-01-31%20100942.png)
+> *Observation: The system downloads the base box and configures the VirtualBox provider.*
+
+### **Step 2: Accessing the VM and Installing Nginx**
+Once the VM was running, SSH was used to access the terminal, and Nginx was installed via the package manager.
+
+![Nginx Installation in VM](Lab1i/Screenshot%202026-01-31%20101232.png)
+> *Observation: Running `sudo apt update` and `sudo apt install -y nginx` inside the guest OS.*
+
+![Nginx Installation Complete](Lab1i/Screenshot%202026-01-31%20101309.png)
+> *Observation: Service configuration complete within the Ubuntu Jammy environment.*
+
+---
+
+## **5. Experiment Setup - Part B: Containers (Docker)**
+
+### **Step 1: Running the Container**
+The Docker engine was used to pull the Ubuntu image and deploy a containerized Nginx instance.
+* **Command:** `docker run -dp 8080:80 --name nginx-container nginx`.
+
+![Docker Pull and Run](Lab1i/docker_pull_ubuntu.png)
+> *Observation: Docker pulls the image layers and starts the container nearly instantaneously.*
+
+### **Step 2: Verification**
+The Nginx server was verified by accessing the mapped port on the localhost.
+
+![Nginx Container Verification](Lab1i/docker_curl_localhost.png)
+> *Observation: The `curl` command confirms the Nginx "Welcome" page is active on port 8080.*
+
+---
+
+## **6. Resource Utilization & Comparison**
+
+### **Observation Commands**
+* **VM:** `free -h`, `htop`.
+* **Container:** `docker stats`.
+
+### **Comparison Results**
+
+| Parameter | Virtual Machine | Container |
+| :--- | :--- | :--- |
+| **Boot Time** | High | Very Low |
+| **RAM Usage** | High | Low |
+| **CPU Overhead** | Higher | Minimal |
+| **Disk Usage** | Larger | Smaller |
+| **Isolation** | Strong | Moderate |
+
+![Docker Stats](Lab1i/docker_naginx_stats.png)
+> *Observation: The containerized Nginx uses only ~13.22 MiB of RAM, demonstrating extreme efficiency compared to a full VM.*
+
+![System Memory](Lab1i/docker_memeory_usage.png)
+
+---
+
+## **7. Conclusion**
+The experiment validates that **Containers** are significantly more lightweight and resource-efficient, making them ideal for microservices and rapid deployment. However, **Virtual Machines** remain superior for workloads requiring full OS isolation or legacy kernel requirements.
+
+---
+
+## **8. Viva Voce Answers**
+1.  **Main Difference:** VMs virtualize hardware and run a full OS; containers virtualize the OS and share the host kernel.
+2.  **Fast Startup:** Containers do not need to boot a guest kernel; they start as a namespaced process.
+3.  **Hypervisor Role:** The hypervisor creates and runs VMs, providing hardware abstraction.
+4.  **Different Kernels:** Generally, no. Containers share the host OS kernel.
+5.  **Docker Lightweight:** It eliminates the overhead of a full guest OS, utilizing shared resources and layered images.
