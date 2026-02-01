@@ -1,3 +1,3 @@
 ## LABS
 
-[experiment 1] (Lab/Lab1)
+[experiment 1] (Lab/Lab1.md)
