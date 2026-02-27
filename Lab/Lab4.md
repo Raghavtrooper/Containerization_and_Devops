@@ -19,15 +19,15 @@ mkdir my-flask-app
 cd my-flask-app
 ```
 
-**`app.py`**
+**`app.py`**  
 ![](../screenshots/Lab4i/4.png)
 
-**`requirements.txt`**
+**`requirements.txt`**  
 ![](../screenshots/Lab4i/5.png)
 
 ### Step 2: Create Dockerfile
 
-**`Dockerfile`**
+**`Dockerfile`**  
 ![](../screenshots/Lab4i/6.png)
 
 ---
@@ -36,7 +36,7 @@ cd my-flask-app
 
 ### Step 1: Create .dockerignore File
 
-**`.dockerignore`**
+**`.dockerignore`**  
 ![](../screenshots/Lab4i/7.png)
 
 ### Step 2: Why .dockerignore is Important
@@ -85,7 +85,7 @@ cd my-flask-app
 
 ### Step 2: Simple Multi-stage Dockerfile
 
-**`Dockerfile.multistage`**
+**`Dockerfile.multistage`**  
 ![](../screenshots/Lab4i/15.png)
 
 ### Step 3: Build and Compare
@@ -120,10 +120,10 @@ docker run -d -p 5000:5000 username/my-flask-app:latest
 
 ![](../screenshots/Lab4i/19.png)
 
-**`app.js`**
+**`app.js`**  
 ![](../screenshots/Lab4i/20.png)
 
-**`package.json`**
+**`package.json`**  
 ![](../screenshots/Lab4i/21.png)
 
 ### Step 2: Node.js Dockerfile
