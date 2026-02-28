@@ -4,7 +4,8 @@
 [Experiment 2](Lab/Lab2.md)  
 [Experiment 3](Lab/Lab3.md)  
 [Experiment 3B](Lab/Lab3b.md)  
-[Experment 4](Lab/Lab4.md)
+[Experment 4](Lab/Lab4.md)  
+[Experment 5](Lab/Lab5.md)
 
 
 ## THEORY
