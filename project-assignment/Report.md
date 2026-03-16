@@ -195,5 +195,4 @@ This project successfully demonstrates the design and deployment of a containeri
 
 The use of production-ready practices such as multi-stage builds, non-root users, named volumes for data persistence, and health checks results in an optimized, secure, and resilient application stack suitable for real-world deployment.
 
-directory link:
-https://github.com/Raghavtrooper/Containerization_and_Devops/tree/main/project-assignment
+directory link: [Github DIrectory](https://github.com/Raghavtrooper/Containerization_and_Devops/tree/main/project-assignment)
