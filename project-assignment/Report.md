@@ -186,6 +186,7 @@ adding a data point in the database
 composing down and back up again (removing the containers and starting them back up again)
 
 ![Data still persisted!!!](../Theory/Project_assignment,midsem/18.png)
+
 Data still persisted!!!
 
 ## 8. Conclusion
