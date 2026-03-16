@@ -135,7 +135,7 @@ Furthermore, Macvlan introduces a "host isolation" issue where the Docker host c
 
 The external Ipvlan network was created manually using the following command, tailored to the host's network configuration (`172.29.144.0/20`):
 
-[Network Creation command, Correction: Ipvalan was used after issues with macvlan. command is the same except macvlan is replace with ipvlan](../Theory/Project_assignment,midsem/8.png)
+![Network Creation command, Correction: Ipvalan was used after issues with macvlan. command is the same except macvlan is replace with ipvlan](../Theory/Project_assignment,midsem/8.png)
 
 ## 6. Orchestration with Docker Compose
 
