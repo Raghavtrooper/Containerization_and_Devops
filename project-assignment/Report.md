@@ -119,7 +119,7 @@ The optimization techniques yield a significant reduction in image size.
 | Unoptimized Database| `postgres:15` | ~400 MB | - |
 | **Optimized Database** | `postgres:15-alpine` | **~240 MB** | **40% size reduction.** |
 
-[ScreenShot](../Theory/Project_assignment,midsem/19.png)
+![ScreenShot](../Theory/Project_assignment,midsem/19.png)
 
 ## 5. Networking: Ipvlan Configuration
 
@@ -161,14 +161,14 @@ The functionality of the entire system was verified through the following steps.
 
 The command `docker network inspect ipvlan_net` confirms that both containers are successfully connected to the network and have received their assigned static IP addresses.
 
-[Docker network Inspect](../Theory/Project_assignment,midsem/14.png)
-[](../Theory/Project_assignment,midsem/15.png)
+![Docker network Inspect](../Theory/Project_assignment,midsem/14.png)
+![](../Theory/Project_assignment,midsem/15.png)
 
 ### Container LAN Accessibility
 
 The backend service was successfully accessed from a browser on the Docker host machine by navigating to its assigned LAN IP: **`http://172.29.150.11:3000/health`**. This confirms that the Ipvlan networking is configured correctly and the container is reachable from the local network.
 
-[](../Theory/Project_assignment,midsem/13.png)
+![](../Theory/Project_assignment,midsem/13.png)
 
 ### Volume Persistence Test
 
@@ -178,11 +178,11 @@ The persistence of database data was confirmed with the following test:
 3.  **Recreate Stack**: The stack was brought back up using `docker-compose up -d`. New containers were created.
 4.  **Fetch Data**: A `GET` request to `/api/records` successfully retrieved the original record, proving that the data persisted in the `pg_persistent_data` volume across the container's lifecycle.
 
-[adding a data point in the database](../Theory/Project_assignment,midsem/16.png)
+![adding a data point in the database](../Theory/Project_assignment,midsem/16.png)
 
-[composing down and back up again (removing the containers and starting them back up again)](../Theory/Project_assignment,midsem/17.png)
+![composing down and back up again (removing the containers and starting them back up again)](../Theory/Project_assignment,midsem/17.png)
 
-[Data still persisted!!!](../Theory/Project_assignment,midsem/18.png)
+![Data still persisted!!!](../Theory/Project_assignment,midsem/18.png)
 
 ## 8. Conclusion
 
