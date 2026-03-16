@@ -194,3 +194,6 @@ Data still persisted!!!
 This project successfully demonstrates the design and deployment of a containerized, multi-service web application that meets all specified architectural and functional requirements. By integrating a PostgreSQL database with a Node.js backend, leveraging Docker Compose for orchestration, and implementing Ipvlan for networking, the system achieves LAN-level service accessibility.
 
 The use of production-ready practices such as multi-stage builds, non-root users, named volumes for data persistence, and health checks results in an optimized, secure, and resilient application stack suitable for real-world deployment.
+
+directory link:
+https://github.com/Raghavtrooper/Containerization_and_Devops/tree/main/project-assignment
