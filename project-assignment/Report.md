@@ -136,6 +136,7 @@ Furthermore, Macvlan introduces a "host isolation" issue where the Docker host c
 The external Ipvlan network was created manually using the following command, tailored to the host's network configuration (`172.29.144.0/20`):
 
 ![Network Creation command, Correction: Ipvalan was used after issues with macvlan. command is the same except macvlan is replace with ipvlan](../Theory/Project_assignment,midsem/8.png)
+Network Creation command, Correction: Ipvalan was used after issues with macvlan. command is the same except macvlan is replace with ipvlan
 
 ## 6. Orchestration with Docker Compose
 
@@ -179,10 +180,13 @@ The persistence of database data was confirmed with the following test:
 4.  **Fetch Data**: A `GET` request to `/api/records` successfully retrieved the original record, proving that the data persisted in the `pg_persistent_data` volume across the container's lifecycle.
 
 ![adding a data point in the database](../Theory/Project_assignment,midsem/16.png)
+adding a data point in the database
 
 ![composing down and back up again (removing the containers and starting them back up again)](../Theory/Project_assignment,midsem/17.png)
+composing down and back up again (removing the containers and starting them back up again)
 
 ![Data still persisted!!!](../Theory/Project_assignment,midsem/18.png)
+Data still persisted!!!
 
 ## 8. Conclusion
 
