@@ -14,4 +14,5 @@ github-repo link: https://github.com/Raghavtrooper/Containerization_and_Devops
 
 theory screenshots are in the screenshots folder.
 
+[Apache Server](Theory/Apache_server.md)  
 [Project assignment 1](project-assignment/Report.md)
