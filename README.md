@@ -13,7 +13,8 @@ github-repo link: https://github.com/Raghavtrooper/Containerization_and_Devops
 
 ## THEORY
 
-theory screenshots are in the screenshots folder.
+theory screenshots are in the screenshots folder.  
 
+[GitHub Action CI/CD Pipeline](Theory/github_actionsCICD.md)  
 [Apache Server](Theory/Apache_server.md)  
 [Project assignment 1](project-assignment/Report.md)
