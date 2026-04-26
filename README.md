@@ -1,7 +1,7 @@
-Name: Raghav Sharma
-SAP ID: 500119121
-Roll no: R2142230183
-Batch: B1 CCVT
+Name: Raghav Sharma  
+SAP ID: 500119121  
+Roll no: R2142230183  
+Batch: B1 CCVT  
 github-repo link: https://github.com/Raghavtrooper/Containerization_and_Devops
 
 ## LABS
