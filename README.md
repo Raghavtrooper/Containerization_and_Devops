@@ -12,6 +12,8 @@ github-repo link: https://github.com/Raghavtrooper/Containerization_and_Devops
 [Experment 7](Lab/Lab7.md)  
 [Experment 9](Lab/Lab9.md)  
 [Experment 10](Lab/Lab10.md)
+[Experment 11](Lab/Lab11.md)
+[Experment 12](Lab/Lab12.md)
 
 
 ## THEORY
