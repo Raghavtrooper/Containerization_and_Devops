@@ -4,7 +4,7 @@ Roll no: R2142230183
 Batch: B1 CCVT  
 github-repo link: https://github.com/Raghavtrooper/Containerization_and_Devops
 
-## LABS
+## builds
 
 [1](Lab/Lab1.md)  
 [2](Lab/Lab2.md)  
@@ -20,9 +20,8 @@ github-repo link: https://github.com/Raghavtrooper/Containerization_and_Devops
 [12](Lab/Lab12.md)
 
 
-## THEORY
-
-theory screenshots are in the screenshots folder.  
+## projects
+ 
 
 [GitHub Action CI/CD Pipeline](Theory/github_actionsCICD.md)  
 [Apache Server](Theory/Apache_server.md)  
